@@ -42,3 +42,20 @@ with st.form("ehr_form"):
 
         # Display result
         st.success(f"The predicted patient condition is: **{prediction_label.upper()}**")
+        import streamlit as st
+
+st.title("Healthcare Classification App")
+
+with st.form("patient_form"):
+    age = st.number_input("Age", min_value=0)
+    sex = st.selectbox("Sex", ["M", "F"])
+    haemoglobin = st.number_input("Haemoglobins")
+    leukocyte = st.number_input("Leukocyte Count")
+
+    submitted = st.form_submit_button("Submit")
+
+    if submitted:
+        st.write("Processing your input...")
+        # You'd typically call your ML model here
+        # prediction = model.predict(...)
+
